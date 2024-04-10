@@ -1,5 +1,5 @@
 #!/bin/bash
-origin_fpath="../Data Analysis Foundation2"
+origin_fpath=$1
 arr=( "$origin_fpath"/* )
 
 
@@ -24,7 +24,7 @@ do
        prefix="$origin_fpath"/
        combined_fname=${combined_fname#"$prefix"}
        echo $combined_fname
-       #ffmpeg -i "$video_fname" -i "$audio_fname" -c copy -map 0:v:0 -map 1:a:0 "$combined_fname"
+       ffmpeg -i "$video_fname" -i "$audio_fname" -c copy -map 0:v:0 -map 1:a:0 "$combined_fname"
 
    else
        echo "$video"
